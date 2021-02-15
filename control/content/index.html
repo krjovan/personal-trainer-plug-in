@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../assets/base.css">
+	<!-- JS -->
+	<script src="../../../../scripts/buildfire.js"></script>
 
-    <!-- build:bundleControlBFMinJS  -->
-    <script src="../../../../scripts/buildfire.js"></script>
-    <!-- endbuild -->
+	<script src="./index.js"></script>	
+	
 
-     <!-- build:bundleDataJSFiles  -->
-     <script src="../../data/section.js"></script>
-     <script src="../../dataAccess/sections.js"></script>
-     <!-- End of Scripts -->
-
+	<link rel="stylesheet" href="./style.css">
 
 </head>
+
 <body>
-    <h3 class="section__title">StarterKit Sample Pages</h3>
-    <ul>
-        <li onclick="location='samples/sortableList/sortableList.html'" >Draggable List</li>
-        <li onclick="location='samples/subPage/index.html'" >Sub Screen</li>
-        <li onclick="location='samples/searchTable/searchTable.html'" >Search Table</li>
-    </ul>
-<script>
-    //location = "samples/sortableList/sortableList.html";
-</script>
+
+	<ul id="ulTasks"></ul>
+
+	<h1 style="text-align: center">New Exercise</h1>
+	<form>
+		<input type="text" id="txtExerciseName" placeholder="Enter the exercise name">
+		<input type="text" id="txtExerciseDesc" placeholder="Enter the description of the exercise">
+		<input type="text" id="txtExerciseQuantity" placeholder="Enter the quantity of the exercise">
+		<select id="txtExerciseMeasure" name="country">
+			<option selected="selected" value="reps">Reps</option>
+			<option value="kilometers">Kilometers</option>
+			<option value="miles">Miles</option>			
+		</select>
+		<button onclick="addExercise()" class="sub-button">Add</button>
+
+	</form>
+
 </body>
+
 </html>

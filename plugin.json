@@ -1,25 +1,22 @@
 {
-  "author":"Daniel Hindi"
-,"pluginName":"<enter your plugin name here>"
-,"pluginDescription":"<enter your plugin description here>"
-,"supportEmail":"<enter your support email here>"
-,"control":{
-  "content":{
-    "enabled":true
-  }
-, "design":{
-    "enabled":true
-  }
-, "settings":{
-    "enabled":true
-  }
-, "customTabs": [
-    { "title": "Language", "url": "/strings/index.html" }
-  ]
-}
-,"widget":{
+  "author": "Jovan Kron",
+  "pluginName": "Personal trainer",
+  "pluginDescription": "Personal trainer plug-in, allows user to send exercise plans daily for app users to complete.",
+  "supportEmail": "loyafi1573@fironia.com",
+  "control": {
+    "content": {
+      "enabled": true
+    },
+    "design":{
+      "enabled": false
+    },
+    "settings": {
+      "enabled": false
+    }
+  },
+  "widget": {
 
-},
-  "features" : [],
-  "languages" : ["en"]
+  },
+  "features": [],
+  "languages": ["en"]
 }
