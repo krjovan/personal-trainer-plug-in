@@ -4,21 +4,21 @@ let exerciseList = {
 
 function addExercise() {
     var exercise = {};
-    exercise["name"] = txtExerciseName.value;
-    exercise["description"] = txtExerciseDesc.value;
-    exercise["quantity"] = txtExerciseQuantity.value;
-    exercise["measure"] = txtExerciseMeasure.value;
+    exercise.name = document.getElementById('txtExerciseName').value;
+    exercise.description = document.getElementById('txtExerciseDesc').value;
+    exercise.quantity = document.getElementById('txtExerciseQuantity').value;
+    exercise.measure = document.getElementById('txtExerciseMeasure').value;
     exerciseList.exercises.push(exercise);
 
     save(err => {
         if (err)
             return console.error(err);
         else {
-            addExerciseToList(exercise);
+            addExerciseToList(txtExerciseName.value, txtExerciseDesc.value, txtExerciseQuantity.value, txtExerciseMeasure.value);
             txtExerciseName.value = '';
             txtExerciseDesc.value = '';
             txtExerciseQuantity.value = '';
-            txtExerciseMeasure.value = '';
+            txtExerciseMeasure.value = 'reps';
         }
     });
 }
@@ -37,24 +37,26 @@ function load() {
             ulTasks.innerHTML = '';
 
             if (exerciseList && exerciseList.exercises && exerciseList.exercises.length) {
-                exerciseList.exercises.forEach(addExerciseToList);
+                exerciseList.exercises.forEach(el => {
+                    addExerciseToList(el.name, el.description, el.quantity, el.measure);
+                });
             }
         }
     });
 }
 
-function addExerciseToList(exercise) {
-    let li = ui('li', ulTasks, exercise.name + ' ' + exercise.description + ' ' + exercise.quantity + ' ' + exercise.measure);
+function addExerciseToList(txtExerciseName, txtExerciseDesc, txtExerciseQuantity, txtExerciseMeasure) {
+    let li = ui('li', ulTasks, txtExerciseName + ' - ' + txtExerciseDesc + ' - ' + txtExerciseQuantity + ' ' + txtExerciseMeasure);
     let delBtn = ui('button', li, 'X', ['delButton']);
     delBtn.onclick = () => {
 
-        let i = exerciseList.exercises.findIndex(t => t == exercise);
-        if (i >= 0) {
-            exerciseList.exercises.splice(i, 1);
-            save();
-            ulTasks.removeChild(li);
+        for (var i = exerciseList.exercises.length - 1; i >= 0; --i) {
+            if (exerciseList.exercises[i].name == txtExerciseName) {
+                exerciseList.exercises.splice(i,1);
+                save();
+                ulTasks.removeChild(li);
+            }
         }
-
     };
 }
 

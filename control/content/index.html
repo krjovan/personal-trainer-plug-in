@@ -6,8 +6,6 @@
 
 	<!-- JS -->
 	<script src="../../../../scripts/buildfire.js"></script>
-
-	<script src="./index.js"></script>	
 	
 
 	<link rel="stylesheet" href="./style.css">
@@ -19,18 +17,21 @@
 	<ul id="ulTasks"></ul>
 
 	<h1 style="text-align: center">New Exercise</h1>
-	<form>
 		<input type="text" id="txtExerciseName" placeholder="Enter the exercise name">
 		<input type="text" id="txtExerciseDesc" placeholder="Enter the description of the exercise">
 		<input type="text" id="txtExerciseQuantity" placeholder="Enter the quantity of the exercise">
 		<select id="txtExerciseMeasure" name="country">
-			<option selected="selected" value="reps">Reps</option>
-			<option value="kilometers">Kilometers</option>
-			<option value="miles">Miles</option>			
+			<option value="reps">Reps</option>
+			<option value="kg">Kilograms</option>
+			<option value="lb">Pounds</option>
+			<option value="hr">Hours</option>
+			<option value="min">Minutes</option>
+			<option value="km">Kilometers</option>
+			<option value="miles">Miles</option>	
 		</select>
 		<button onclick="addExercise()" class="sub-button">Add</button>
 
-	</form>
+	<script src="./index.js"></script>	
 
 </body>
 

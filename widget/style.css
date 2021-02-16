@@ -17,4 +17,5 @@ li{
 
 .completed{
     border-left-color: greenyellow;
+    background-color: rgb(200, 255, 214);
 }

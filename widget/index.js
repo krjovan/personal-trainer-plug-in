@@ -50,7 +50,7 @@ function loadUserExercises(user) {
 
 
 function addExercisesToList(exercise) {
-    let li = ui('li', ulTasks, exercise.name + ' ' + exercise.description + ' ' + exercise.quantity + ' ' + exercise.measure);
+    let li = ui('li', ulTasks, '<h3 style="margin-top: 2px;"> ' + exercise.name + ' </h3> <p style="margin-top: 2px;"> ' + exercise.description + '</p><span style="font-weight: bold"> ' + exercise.quantity + '</span> ' + exercise.measure);
     li.onclick = () => {
 
 
